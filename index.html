@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<head>
+    <title>
+Расписание
+    </title>
+    <style>
+        .ras{
+            font-size: 70px;
+        }
+        .butt{
+            text-align: center;
+        }
+        .tab{
+            margin: auto;
+            margin-top: 15%;
+        }
+        .knop{
+            height: 85px;
+            width: 300px;
+            font-size: 50px;
+        }
+        .knop1{
+            height: 85px;
+            width: 500px;
+            font-size: 50px;
+        }
+    </style>
+<script>
+        currentdate = new Date();
+var oneJan = new Date(currentdate.getFullYear(),0,1);
+var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
+var week = Math.ceil(( currentdate.getDay() + 1 + numberOfDays) / 7);
+var w = parseInt(week);
+var date = new Date();
+var day = date.getDay();
+function f1(){
+        if ((w % 2) == 1){
+            switch (day){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00. лр 102б-1 Компьютерные языки разметки <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык <br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык<br><br> 19:40 - 21:00. лк 100-3а Великая Отечественная война советского народа доц. Рыжанков И.М.";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И. <br><br> 19:40 - 21:00. пз 334-4 Арифметико-логические основы вычислительных систем";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. пз 200-4 Математика<br><br> 14:40 -16:00. лр 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+            }
+        }
+        else{
+            switch (day){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 404-1, 506-1, Физика <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура <br><br> 18:05 - 19:25.  лк 200-3а Технологии frontend-программирования доц. Жиляк Н.А.";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И.";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. лк 305-4 Математика доц. Ловенецкая Е.И. 14:40 -16:00. лр102б-1 Компьютерные языки разметки";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+            }
+        }
+    }
+function f2(){
+    if (day == 7){
+        let r = 1;
+        if ((w % 2) == 1){
+            switch (r){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 102б-1 Компьютерные языки разметки <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык<br> 19:40 - 21:00.  лк 100-3а Великая Отечественная война советского народа доц. Рыжанков И.М.";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br> 16:30 - 17:50. Физическая культура";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И. <br><br> 19:40 - 21:00. пз 334-4 Арифметико-логические основы вычислительных систем";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. пз 200-4 Математика <br><br> 14:40 - 16:00. лр 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }}
+                }
+            else{
+                switch (r){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 404-1, 506-1, Физика <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура <br><br> 18:05 - 19:25.  лк 200-3а Технологии frontend-программирования доц. Жиляк Н.А.";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И.";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. лк 305-4 Математика доц. Ловенецкая Е.И. 14:40 -16:00. лр102б-1 Компьютерные языки разметки";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+            }
+        }}
+            else{
+                r = day + 1;
+                if ((w % 2) == 1){
+            switch (r){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 102б-1 Компьютерные языки разметки <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык<br><br> 19:40 - 21:00. лк 100-3а Великая Отечественная война советского народа доц. Рыжанков И.М.";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И. <br> 19:40 - 21:00. пз 334-4 Арифметико-логические основы вычислительных систем";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. пз 200-4 Математика<br><br> 14:40 - 16:00. лр 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }}
+                }
+                else{
+                switch (r){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 404-1, 506-1, Физика <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура <br><br> 18:05 - 19:25.  лк 200-3а Технологии frontend-программирования доц. Жиляк Н.А.";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И.";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. лк 305-4 Математика доц. Ловенецкая Е.И. 14:40 -16:00. лр102б-1 Компьютерные языки разметки";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+            }}
+            }
+        }
+function f3(){
+    if (day == 1){
+        let t = 7;
+    if ((w % 2) == 1){
+            switch (t){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00. лр 102б-1 Компьютерные языки разметки <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык<br><br> 19:40 - 21:00. лк 100-3а Великая Отечественная война советского народа доц. Рыжанков И.М.";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И. <br><br> 19:40 - 21:00. пз 334-4 Арифметико-логические основы вычислительных систем";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. пз 200-4 Математика<br><br> 14:40 - 16:00. лр 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                       }
+                      }
+                    }
+                    else{
+                        switch (t){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 404-1, 506-1, Физика <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура <br><br> 18:05 - 19:25.  лк 200-3а Технологии frontend-программирования доц. Жиляк Н.А.";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И.";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. лк 305-4 Математика доц. Ловенецкая Е.И. 14:40 -16:00. лр102б-1 Компьютерные языки разметки";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+                    } 
+                 }
+                }
+            else{
+                let t = day - 1;
+                if ((w % 2) == 1){
+            switch (t){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00. лр 102б-1 Компьютерные языки разметки <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык<br><br> 19:40 - 21:00. лк 100-3а Великая Отечественная война советского народа доц. Рыжанков И.М.";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И. <br><br> 19:40 - 21:00. пз 334-4 Арифметико-логические основы вычислительных систем";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. пз 200-4 Математика<br><br> 14:40 - 16:00. лр 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+                }
+            }
+            else{
+                switch (t){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 404-1, 506-1, Физика <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура <br><br> 18:05 - 19:25.  лк 200-3а Технологии frontend-программирования доц. Жиляк Н.А.";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И.";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. лк 305-4 Математика доц. Ловенецкая Е.И. 14:40 -16:00. лр102б-1 Компьютерные языки разметки";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }}
+            }
+        }
+}
+</script>
+</head>
+<body>
+    <table class="tab" width="100%" cellspacing="0" cellpadding="0" border="1"><tr><td height="1500px">
+<div class="ras" id="d1"></div>
+<div class="ras" id="d2"></div>
+<div class="ras" id="d3"></div>
+<div class="ras" id="d4"></div>
+<div class="ras" id="d5"></div>
+<div class="ras" id="d6"></div>
+<div class="ras" id="d7"></div>
+</td>
+</tr><tr><td class="butt">
+<input class="knop" type="button" value="Вчера" onclick="f3()"/>
+<input class="knop" type="button" value="На сегодня" onclick="f1()"/>
+<input class="knop" type="button" value="На завтра" onclick="f2()"/>
+</td></tr><tr><td class="butt">
+    <a href="https://ktnanm.github./"><input class="knop1" type="button" value="Все расписание"/> </a>
+</td></tr>
+</table>
+</body>
