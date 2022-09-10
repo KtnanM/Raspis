@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<head>
+    <title>
+Расписание
+    </title>
+    <style>
+        .ras{
+            font-size: 70px;
+            color: aliceblue;
+            font-family: "Comic Sans MS";
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Comic Sans MS"),
+       /* Если не получилось, загрузит woff2 */
+       url("ComicSansMS.woff2") format("woff2"),
+       /* Если браузер не поддерживает woff2, загрузит woff */
+       url("ComicSansMS.woff") format("woff"),
+       url("ComicSansMS.eot") format("eot"),
+       url("ComicSansMS.ttf") format("ttf");
+        }
+        .butt{
+            text-align: center;
+        }
+        .tab{
+            margin: auto;
+            margin-top: 8%;
+        }
+        .knop{
+            height: 85px;
+            width: 300px;
+            font-size: 50px;
+            padding:5px 15px; 
+          background:#3500D3 ; 
+          color: aliceblue;
+          margin-right: 8.5px;
+            margin-bottom: 5px;
+    border:0 none;
+    -webkit-border-radius: 5px;
+    border-radius: 25px; 
+    font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Roboto"),
+       /* Если не получилось, загрузит woff2 */
+       url("/fonts/roboto.woff2") format("woff2"),
+       /* Если браузер не поддерживает woff2, загрузит woff */
+       url("/fonts/roboto.woff") format("woff");
+        }
+        .knop1{
+            height: 85px;
+            width: 500px;
+            font-size: 50px;
+            padding:5px 15px; 
+          background:#3500D3 ; 
+          color: aliceblue;;
+    border:0 none;
+    -webkit-border-radius: 5px;
+    border-radius: 25px; 
+    font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Roboto"),
+       /* Если не получилось, загрузит woff2 */
+       url("/fonts/roboto.woff2") format("woff2"),
+       /* Если браузер не поддерживает woff2, загрузит woff */
+       url("/fonts/roboto.woff") format("woff");
+        }
+    </style>
+<script>
+    const date1 = new Date(8/29/2022);
+    const date2 = new Date();
+    const oneDay = 1000 * 60 * 60 * 24;
+    const diffInTime = date2.getTime() - date1.getTime();
+    const diffInDays = Math.round(diffInTime / oneDay+1);
+    let w = Math.ceil(diffInDays/7);
+var date = new Date();
+var day = date.getDay();
+function time(){
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var btu = hour*60+minute;
+    if (day != 0){
+        if(w%2==0){
+        if (day == 6){
+            if ((hour * 60 + minute) >(11 * 60 + 25)){
+            if ((hour*60+minute) < (12*60+45)){
+        var vrem = (80 - ((hour-11)*60 + minute - 25));
+        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+            else{
+                if((hour*60+minute)<(13*60)){
+                    document.getElementById("clock").innerText ="У тебя перемена";
+                }
+                else{
+                    if((hour*60+minute)>(13*60)){
+                       if((hour*60+minute)<(14*60+20)){
+                        var vrem = (80 - ((hour-13)*60 + minute));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                       } 
+                       else{
+                        if((hour*60+minute)<(14*60+40)){
+                            document.getElementById("clock").innerText ="У тебя перемена";
+                        }
+                        else{
+                            if((hour*60+minute) <(16*60)){
+                                var vrem = (80 - ((hour-14)*60 + minute - 40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                            }
+                            else{
+                                document.getElementById("clock").innerText = "Пары нет"; 
+                            }
+                        } 
+                            } 
+                    
+                    }
+                }
+            }       
+                    }
+                    else{
+                        document.getElementById("clock").innerText = "Пары нет"; 
+                    }
+                     }      
+        else{
+           switch(day){
+            case 1:{
+                if(hour*60+minute<14*60+40){
+                    document.getElementById("clock").innerText = "Пары нет";
+                }
+                else{
+                    if(btu>14*60+40){
+                        if(btu<16*60){
+                            var vrem = (80 - ((hour-14)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+                        else{
+                            if( btu > 16*60+30){
+                                if(btu<17*60+50){
+                                    var vrem = (80 - ((hour-16)*60 + minute-30));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                }
+                                            }
+                            else{
+                                document.getElementById("clock").innerText = "Пары нет";
+                            }
+                    }
+
+                        
+                    }
+                    }
+                    break;
+                }         
+            case 2:{
+                if(hour*60+minute<14*60+40){
+                    document.getElementById("clock").innerText = "Пары нет";
+                }
+                else{
+                    if(btu>14*60+40){
+                        if(btu<16*60){
+                            var vrem = (80 - ((hour-14)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+                        else{
+                            if( btu > 16*60+30){
+                                if(btu<17*60+50){
+                                    var vrem = (80 - ((hour-16)*60 + minute-30));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                }
+                                else{
+                                    if(btu>18*60+5){
+                                        if(btu<19*60+25){
+                                            var vrem = (80 - ((hour-18)*60 + minute-5));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                        }
+                                                else{
+                                                    if(btu>19*60+40){
+                                                         if(btu<21*60){
+                                                            var vrem = (80 - ((hour-19)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                                         }   
+                                                         else{
+                                document.getElementById("clock").innerText = "Пары нет";
+                            }
+                                                    }
+                                                    else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                                                }
+                                                    }
+                                    else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+
+                                              }
+                                            }
+                            else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                    }
+
+                        
+                    }
+                    }
+                    break;
+            }   
+            case 3:{
+                if(hour*60+minute<14*60+40){
+                    document.getElementById("clock").innerText = "Пары нет";
+                }
+                else{
+                    if(btu>14*60+40){
+                        if(btu<16*60){
+                            var vrem = (80 - ((hour-14)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+                        else{
+                            if( btu > 16*60+30){
+                                if(btu<17*60+50){
+                                    var vrem = (80 - ((hour-16)*60 + minute-30));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                }
+                                else{
+                                    if(btu>18*60+5){
+                                        if(btu<19*60+25){
+                                            var vrem = (80 - ((hour-18)*60 + minute-5));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                        }
+                                                else{
+                                                    if(btu>19*60+40){
+                                                         if(btu<21*60){
+                                                            var vrem = (80 - ((hour-19)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                                         }   
+                                                         else{
+                                document.getElementById("clock").innerText = "Пары нет";
+                            }
+                                                    }
+                                                    else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                                                }
+                                                    }
+                                    else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+
+                                              }
+                                            }
+                            else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                    }
+
+                        
+                    }
+                    }
+                    break;
+            }
+            case 4:{
+                if(hour*60+minute<14*60+40){
+                    document.getElementById("clock").innerText = "Пары нет";
+                }
+                else{
+                    if(btu>14*60+40){
+                        if(btu<16*60){
+                            var vrem = (80 - ((hour-14)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+                        else{
+                            if( btu > 16*60+30){
+                                if(btu<17*60+50){
+                                    var vrem = (80 - ((hour-16)*60 + minute-30));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                }
+                                            }
+                            else{
+                                document.getElementById("clock").innerText = "Пары нет";
+                            }
+                    }
+
+                        
+                    }
+                    }
+                    break;
+            }
+            case 5:{
+                if(hour*60+minute<14*60+40){
+                    document.getElementById("clock").innerText = "Пары нет";
+                }
+                else{
+                    if(btu>14*60+40){
+                        if(btu<16*60){
+                            var vrem = (80 - ((hour-14)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+                        else{
+                            if( btu > 16*60+30){
+                                if(btu<17*60+50){
+                                    var vrem = (80 - ((hour-16)*60 + minute-30));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                }
+                                else{
+                                    if(btu>18*60+5){
+                                        if(btu<19*60+25){
+                                            var vrem = (80 - ((hour-18)*60 + minute-5));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                        }
+                                                else{
+                                                    if(btu>19*60+40){
+                                                         if(btu<21*60){
+                                                            var vrem = (80 - ((hour-19)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                                         }   
+                                                         else{
+                                document.getElementById("clock").innerText = "Пары нет";
+                            }
+                                                    }
+                                                    else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                                                }
+                                                    }
+                                    else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+
+                                              }
+                                            }
+                            else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                    }
+
+                        
+                    }
+                    }
+                    break;
+            }
+           } 
+        }      
+     }
+     else{
+        if (day == 6){
+            if ((hour * 60 + minute) >(11 * 60 + 25)){
+            if ((hour*60+minute) < (12*60+45)){
+        var vrem = (80 - ((hour-11)*60 + minute - 25));
+        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+            else{
+                if((hour*60+minute)<(13*60)){
+                    document.getElementById("clock").innerText ="У тебя перемена";
+                }
+                else{
+                    if((hour*60+minute)>(13*60)){
+                       if((hour*60+minute)<(14*60+20)){
+                        var vrem = (80 - ((hour-13)*60 + minute));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                       } 
+                       else{
+                        if((hour*60+minute)<(14*60+40)){
+                            document.getElementById("clock").innerText ="У тебя перемена";
+                        }
+                        else{
+                            if((hour*60+minute) <(16*60)){
+                                var vrem = (80 - ((hour-14)*60 + minute - 40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                            }
+                            else{
+                                document.getElementById("clock").innerText = "Пары нет"; 
+                            }
+                        } 
+                            } 
+                    
+                    }
+                }
+            }       
+                    }
+                    else{
+                        document.getElementById("clock").innerText = "Пары нет"; 
+                    }
+                     }      
+        else{
+           switch(day){
+            case 1:{
+                if(hour*60+minute<14*60+40){
+                    document.getElementById("clock").innerText = "Пары нет";
+                }
+                else{
+                    if(btu>14*60+40){
+                        if(btu<16*60){
+                            var vrem = (80 - ((hour-14)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+                        else{
+                            if( btu > 16*60+30){
+                                if(btu<17*60+50){
+                                    var vrem = (80 - ((hour-16)*60 + minute-30));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                }
+                                            }
+                            else{
+                                document.getElementById("clock").innerText = "Пары нет";
+                            }
+                    }
+
+                        
+                    }
+                    }
+                    break;
+                }         
+            case 2:{
+                if(hour*60+minute<14*60+40){
+                    document.getElementById("clock").innerText = "Пары нет";
+                }
+                else{
+                    if(btu>14*60+40){
+                        if(btu<16*60){
+                            var vrem = (80 - ((hour-14)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+                        else{
+                            if( btu > 16*60+30){
+                                if(btu<17*60+50){
+                                    var vrem = (80 - ((hour-16)*60 + minute-30));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                }
+                                else{
+                                    if(btu>18*60+5){
+                                        if(btu<19*60+25){
+                                            var vrem = (80 - ((hour-18)*60 + minute-5));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                        }
+                                                else{
+                                                    if(btu>19*60+40){
+                                                         if(btu<21*60){
+                                                            var vrem = (80 - ((hour-19)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                                         }   
+                                                         else{
+                                document.getElementById("clock").innerText = "Пары нет";
+                            }
+                                                    }
+                                                    else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                                                }
+                                                    }
+                                    else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+
+                                              }
+                                            }
+                            else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                    }
+
+                        
+                    }
+                    }
+                    break;
+            }   
+            case 3:{
+                if(hour*60+minute<14*60+40){
+                    document.getElementById("clock").innerText = "Пары нет";
+                }
+                else{
+                    if(btu>14*60+40){
+                        if(btu<16*60){
+                            var vrem = (80 - ((hour-14)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+                        else{
+                            if( btu > 16*60+30){
+                                if(btu<17*60+50){
+                                    var vrem = (80 - ((hour-16)*60 + minute-30));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                }
+                                else{
+                                    if(btu>18*60+5){
+                                        if(btu<19*60+25){
+                                            var vrem = (80 - ((hour-18)*60 + minute-5));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                        }
+                                                    }
+                                    else{
+                                document.getElementById("clock").innerText = "Пары нет";
+                            }
+
+                                              }
+                                            }
+                            else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                    }
+
+                        
+                    }
+                    }
+                    break;
+            }
+            case 4:{
+                if(hour*60+minute<14*60+40){
+                    document.getElementById("clock").innerText = "Пары нет";
+                }
+                else{
+                    if(btu>14*60+40){
+                        if(btu<16*60){
+                            var vrem = (80 - ((hour-14)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+                        else{
+                            if( btu > 16*60+30){
+                                if(btu<17*60+50){
+                                    var vrem = (80 - ((hour-16)*60 + minute-30));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                }
+                                else{
+                                    if(btu>18*60+5){
+                                        if(btu<19*60+25){
+                                            var vrem = (80 - ((hour-18)*60 + minute-5));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                        }
+                                                    }
+                                    else{
+                                document.getElementById("clock").innerText = "Пары нет";
+                            }
+
+                                              }
+                                            }
+                            else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                    }
+
+                        
+                    }
+                    }
+                    break;
+            }
+            case 5:{
+                if(hour*60+minute<14*60+40){
+                    document.getElementById("clock").innerText = "Пары нет";
+                }
+                else{
+                    if(btu>14*60+40){
+                        if(btu<16*60){
+                            var vrem = (80 - ((hour-14)*60 + minute-40));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                        }
+                        else{
+                            if( btu > 16*60+30){
+                                if(btu<17*60+50){
+                                    var vrem = (80 - ((hour-16)*60 + minute-30));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                }
+                                else{
+                                    if(btu>18*60+5){
+                                        if(btu<19*60+25){
+                                            var vrem = (80 - ((hour-18)*60 + minute-5));
+                        document.getElementById("clock").innerText = vrem + " мин до конца";
+                                        }
+                                                    }
+                                    else{
+                                document.getElementById("clock").innerText = "Пары нет";
+                            }
+
+                                              }
+                                            }
+                            else{
+                                document.getElementById("clock").innerText = "Перемена";
+                            }
+                    }
+
+                        
+                    }
+                    }
+                    break;
+            }
+            }
+           } 
+        }  
+     }
+    }
+function f1(){
+        if ((w % 2) == 0){
+            switch (day){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00. лр 102б-1 Компьютерные языки разметки <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык <br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык<br><br> 19:40 - 21:00. лк 100-3а Великая Отечественная война советского народа доц. Рыжанков И.М.";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И. <br><br> 19:40 - 21:00. пз 334-4 Арифметико-логические основы вычислительных систем";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. пз 200-4 Математика<br><br> 14:40 -16:00. лр 131-4 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 0:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+            }
+        }
+        else{
+            switch (day){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 404-1, 506-1, Физика <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура <br><br> 18:05 - 19:25.  лк 200-3а Технологии frontend-программирования доц. Жиляк Н.А.";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И.";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. лк 305-4 Математика доц. Ловенецкая Е.И. 14:40 -16:00. лр102б-1 Компьютерные языки разметки";
+                    break;
+                }
+                case 0:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+            }
+        }
+    }
+    f1();
+function f2(){
+    if (day == 0){
+        let r = 1;
+        w = w + 1;
+        if ((w % 0) == 1){
+            switch (r){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 102б-1 Компьютерные языки разметки <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык<br> 19:40 - 21:00.  лк 100-3а Великая Отечественная война советского народа доц. Рыжанков И.М.";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br> 16:30 - 17:50. Физическая культура";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И. <br><br> 19:40 - 21:00. пз 334-4 Арифметико-логические основы вычислительных систем";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. пз 200-4 Математика <br><br> 14:40 - 16:00. лр 131-4 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }}
+                }
+            else{
+                switch (r){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 404-1, 506-1, Физика <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура <br><br> 18:05 - 19:25.  лк 200-3а Технологии frontend-программирования доц. Жиляк Н.А.";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И.";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. лк 305-4 Математика доц. Ловенецкая Е.И. 14:40 -16:00. лр102б-1 Компьютерные языки разметки";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+            }
+        }}
+            else{
+                r = day + 1;
+                if ((w % 0) == 0){
+            switch (r){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 102б-1 Компьютерные языки разметки <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык<br><br> 19:40 - 21:00. лк 100-3а Великая Отечественная война советского народа доц. Рыжанков И.М.";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И. <br> 19:40 - 21:00. пз 334-4 Арифметико-логические основы вычислительных систем";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. пз 200-4 Математика<br><br> 14:40 - 16:00. лр 131-4 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }}
+                }
+                else{
+                switch (r){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 404-1, 506-1, Физика <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура <br><br> 18:05 - 19:25.  лк 200-3а Технологии frontend-программирования доц. Жиляк Н.А.";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И.";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. лк 305-4 Математика доц. Ловенецкая Е.И. 14:40 -16:00. лр102б-1 Компьютерные языки разметки";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+            }}
+            }
+        }
+function f3(){
+    if (day == 1){
+        let t = 7;
+        w = w - 1;
+    if ((w % 2) == 0){
+            switch (t){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00. лр 102б-1 Компьютерные языки разметки <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык<br><br> 19:40 - 21:00. лк 100-3а Великая Отечественная война советского народа доц. Рыжанков И.М.";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И. <br><br> 19:40 - 21:00. пз 334-4 Арифметико-логические основы вычислительных систем";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. пз 200-4 Математика<br><br> 14:40 - 16:00. лр 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                       }
+                      }
+                    }
+                    else{
+                        switch (t){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 404-1, 506-1, Физика <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура <br><br> 18:05 - 19:25.  лк 200-3а Технологии frontend-программирования доц. Жиляк Н.А.";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И.";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. лк 305-4 Математика доц. Ловенецкая Е.И. 14:40 -16:00. лр102б-1 Компьютерные языки разметки";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+                    } 
+                 }
+                }
+            else{
+                let t = day - 1;
+                if ((w % 2) == 0){
+            switch (t){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00. лр 102б-1 Компьютерные языки разметки <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык<br><br> 19:40 - 21:00. лк 100-3а Великая Отечественная война советского народа доц. Рыжанков И.М.";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И. <br><br> 19:40 - 21:00. пз 334-4 Арифметико-логические основы вычислительных систем";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. пз 200-4 Математика<br><br> 14:40 - 16:00. лр 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }
+                }
+            }
+            else{
+                switch (t){
+                case 1:{
+                    d5.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d1.innerHTML="14:40 - 16:00. лк 200-3а Компьютерные языки разметки доц. Жиляк Н.А. <br><br> 16:30 - 17:50. Физическая культура ";
+                    break;
+                }
+                case 2:{
+                    d1.innerHTML="";
+                    d5.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d2.innerHTML="14:40 - 16:00.  лр 404-1, 506-1, Физика <br><br> 16:30 - 17:50. пз 423-4 Белорусский язык<br><br> 18:05 - 19:25. пз Английский язык <br><br> 19:40 - 21:00. р 206-1 Основы алгоритмизации и программирования";
+                    break;
+                }
+                case 3:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d5.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d3.innerHTML="14:40 - 16:00. пз 120-4 Физика <br><br> 16:30 - 17:50. р 301-1 Технологии frontend-программирования <br><br> 18:05 - 19:25. пз Английский язык";
+                    break;
+                }
+                case 4:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d5.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d4.innerHTML="14:40 - 16:00. лк 200-3а Основы алгоритмизации и программирования доц. Белодед Н.И<br><br> 16:30 - 17:50. Физическая культура <br><br> 18:05 - 19:25.  лк 200-3а Технологии frontend-программирования доц. Жиляк Н.А.";
+                    break;
+                }
+                case 5:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d7.innerHTML="";
+                    d5.innerHTML="14:20 - 16:00. лк 200-3а Арифметико-логические основы вычислительных систем доц. Гринюк Д.А. <br><br> 16:30 - 17:50. пз 336-4 Математика <br><br> 18:05 - 19:25. лк 305-4 Математика доц. Ловенецкая Е.И.";
+                    break;
+                }
+                case 6:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="";
+                    d6.innerHTML="11:25 - 12:45. лк 305-4 Физика ст. преп. Вершиловская И.В. <br><br> 13:00 - 14:20. лк 305-4 Математика доц. Ловенецкая Е.И. 14:40 -16:00. лр102б-1 Компьютерные языки разметки";
+                    break;
+                }
+                case 7:{
+                    d1.innerHTML="";
+                    d2.innerHTML="";
+                    d3.innerHTML="";
+                    d4.innerHTML="";
+                    d6.innerHTML="";
+                    d5.innerHTML="";
+                    d7.innerHTML="У тебя выходной. Радуйся и пиши JS("
+                    break;
+                }}
+            }
+        }
+}
+</script>
+</head>
+<body bgcolor="black">
+    <table class="tab" width="100%" cellspacing="15" cellpadding="0" border="0"><tr><td height="1500px">
+<div class="ras" id="d1"></div>
+<div class="ras" id="d2"></div>
+<div class="ras" id="d3"></div>
+<div class="ras" id="d4"></div>
+<div class="ras" id="d5"></div>
+<div class="ras" id="d6"></div>
+<div class="ras" id="d7"></div><br><br>
+<dav id="clock" class="ras"><script>time()</script></dav>
+</td>
+        <script>
+            f1();
+        </script>
+</tr><tr><td class="butt">
+<input class="knop" type="button" value="Вчера" onclick="f3()"/>
+<input class="knop" type="button" value="На сегодня" onclick="f1()"/>
+<input class="knop" type="button" value="На завтра" onclick="f2()"/>
+</td></tr><tr><td class="butt">
+    <a href="https://ktnanm.github.io/All-raspis/"><input class="knop1" type="button" value="Все расписание"/> </a>
+</td></tr>
+</table>
+</body>
