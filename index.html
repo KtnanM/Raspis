@@ -7,18 +7,15 @@
         .ras{
             font-size: 70px;
             color: aliceblue;
- font-family: 'Comic Sans MS';
-    src: url('ComicSansMS-Bold.eot');
-    src:
-        url('ComicSansMS-Bold.eot?#iefix') format('embedded-opentype'),
-        url('ComicSansMS-Bold.woff2') format('woff2'),
-        url('ComicSansMS-Bold.woff') format('woff'),
-        url('ComicSansMS-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-        }
-        .butt{
-            text-align: center;
+            font-family: "Comic Sans MS";
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Comic Sans MS"),
+       /* Если не получилось, загрузит woff2 */
+       url("ComicSansMS.woff2") format("woff2"),
+       /* Если браузер не поддерживает woff2, загрузит woff */
+       url("ComicSansMS.woff") format("woff"),
+       url("ComicSansMS.eot") format("eot"),
+       url("ComicSansMS.ttf") format("ttf");
         }
         .tab{
             margin: auto;
@@ -35,15 +32,15 @@
     border:0 none;
     -webkit-border-radius: 5px;
     border-radius: 25px; 
-             font-family: 'Comic Sans MS';
-    src: url('ComicSansMS-Bold.eot');
-    src:
-        url('ComicSansMS-Bold.eot?#iefix') format('embedded-opentype'),
-        url('ComicSansMS-Bold.woff2') format('woff2'),
-        url('ComicSansMS-Bold.woff') format('woff'),
-        url('ComicSansMS-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+                        font-family: "Comic Sans MS";
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Comic Sans MS"),
+       /* Если не получилось, загрузит woff2 */
+       url("ComicSansMS.woff2") format("woff2"),
+       /* Если браузер не поддерживает woff2, загрузит woff */
+       url("ComicSansMS.woff") format("woff"),
+       url("ComicSansMS.eot") format("eot"),
+       url("ComicSansMS.ttf") format("ttf");
         }
         .knop1{
             height: 85px;
@@ -55,15 +52,15 @@
     border:0 none;
     -webkit-border-radius: 5px;
     border-radius: 25px; 
-             font-family: 'Comic Sans MS';
-    src: url('ComicSansMS-Bold.eot');
-    src:
-        url('ComicSansMS-Bold.eot?#iefix') format('embedded-opentype'),
-        url('ComicSansMS-Bold.woff2') format('woff2'),
-        url('ComicSansMS-Bold.woff') format('woff'),
-        url('ComicSansMS-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+                      font-family: "Comic Sans MS";
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Comic Sans MS"),
+       /* Если не получилось, загрузит woff2 */
+       url("ComicSansMS.woff2") format("woff2"),
+       /* Если браузер не поддерживает woff2, загрузит woff */
+       url("ComicSansMS.woff") format("woff"),
+       url("ComicSansMS.eot") format("eot"),
+       url("ComicSansMS.ttf") format("ttf");
         }
     </style>
 <script>
